@@ -1,7 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: 'qr-code'
+  selector: 'qr-code',
+  template: `
+    <img [src]="src" [alt]="data" width="{{size}}px" height="{{size}}px">
+  `
 })
 export class QRCodeComponent implements OnInit {
 
@@ -9,10 +13,20 @@ export class QRCodeComponent implements OnInit {
 
   @Input() size: number;
 
-  constructor() {}
+  src: SafeResourceUrl;
+
+  constructor(private sanitizer: DomSanitizer) {}
 
   ngOnInit() {
-    console.log(this.data, this.size);
+    this.src = this.sanitizer.bypassSecurityTrustResourceUrl(
+      'https://api.qrserver.com/v1/create-qr-code/?data='
+      + this.data
+      +'&size='
+      + this.size
+      + 'x'
+      + this.size
+      + '&margin=0'
+    );
   }
 
 }

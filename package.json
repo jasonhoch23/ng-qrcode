@@ -3,9 +3,7 @@
   "version": "1.0.1",
   "description": "Simple and AOT compatible QR code generator for your Angular project.",
   "main": "main.js",
-  "scripts": {
-    "publish": "rm -rf dist && tsc && npm publish ./"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emin93/ng-qrcode.git"

@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { NgModule, Component, Input, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
@@ -30,3 +31,9 @@ export class QRCodeComponent implements OnInit {
   }
 
 }
+
+@NgModule({
+  imports: [CommonModule],
+  declarations: [QRCodeComponent]
+})
+export class QRCodeModule {}

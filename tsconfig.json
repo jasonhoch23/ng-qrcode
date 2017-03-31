@@ -16,8 +16,6 @@
     ]
   },
   "files": [
-    "main.ts",
-    "qrcode.module.ts",
-    "qrcode.component.ts"
+    "ng-qrcode.ts"
   ]
 }

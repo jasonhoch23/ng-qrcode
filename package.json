@@ -20,12 +20,8 @@
     "ng4"
   ],
   "files": [
-    "main.d.ts",
-    "main.js",
-    "qrcode.module.d.ts",
-    "qrcode.module.js",
-    "qrcode.component.d.ts",
-    "qrcode.component.js"
+    "ng-qrcode.d.ts",
+    "ng-qrcode.js"
   ],
   "author": "emin93 <emin@emin.ch>",
   "license": "MIT",

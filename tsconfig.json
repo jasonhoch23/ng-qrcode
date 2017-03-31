@@ -1,5 +1,4 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
     "sourceMap": false,
     "declaration": true,
@@ -14,8 +13,5 @@
       "es2016",
       "dom"
     ]
-  },
-  "files": [
-    "ng-qrcode.ts"
-  ]
+  }
 }

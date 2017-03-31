@@ -16,6 +16,6 @@
     ]
   },
   "files": [
-    "ngx-qrcode.ts"
+    "ng-qrcode.ts"
   ]
 }

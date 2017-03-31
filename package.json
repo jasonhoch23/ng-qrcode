@@ -1,14 +1,14 @@
 {
-  "name": "ngx-qrcode",
-  "version": "1.0.3",
+  "name": "ng-qrcode",
+  "version": "1.0.4",
   "description": "Simple and AOT compatible QR code generator for your Angular project.",
-  "main": "ngx-qrcode.js",
-  "module": "ngx-qrcode.js",
-  "typings": "ngx-qrcode.d.ts",
+  "main": "ng-qrcode.js",
+  "module": "ng-qrcode.js",
+  "typings": "ng-qrcode.d.ts",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emin93/ngx-qrcode.git"
+    "url": "git+https://github.com/emin93/ng-qrcode.git"
   },
   "keywords": [
     "qr",
@@ -24,15 +24,15 @@
     "ng4"
   ],
   "files": [
-    "ngx-qrcode.d.ts",
-    "ngx-qrcode.js"
+    "ng-qrcode.d.ts",
+    "ng-qrcode.js"
   ],
   "author": "emin93 <emin@emin.ch>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/emin93/ngx-qrcode/issues"
+    "url": "https://github.com/emin93/ng-qrcode/issues"
   },
-  "homepage": "https://github.com/emin93/ngx-qrcode#readme",
+  "homepage": "https://github.com/emin93/ng-qrcode#readme",
   "peerDependencies": {
     "@angular/core": ">=2.0.0",
     "@angular/common": ">=2.0.0",

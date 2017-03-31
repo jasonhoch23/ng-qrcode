@@ -1,11 +1,10 @@
 import { NgModule, Component, Input, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl, BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'qr-code',
   template: `
-    <img [src]="src" [alt]="data" width="{{size}}px" height="{{size}}px">
+    <img [src]="src" [alt]="data" [width]="size + 'px'" [height]="size + 'px'">
   `
 })
 export class QRCodeComponent implements OnInit {
@@ -33,7 +32,9 @@ export class QRCodeComponent implements OnInit {
 }
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [QRCodeComponent]
+  imports: [BrowserModule],
+  exports: [QRCodeComponent],
+  declarations: [QRCodeComponent],
+  entryComponents: [QRCodeComponent]
 })
 export class QRCodeModule {}

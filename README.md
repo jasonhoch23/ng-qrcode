@@ -15,5 +15,5 @@ import { QRCodeModule } from 'ng-qrcode';
 })
 ```
 ```
-<qr-code [data]="'Yo world!'" [size]="200"></qr-code>
+<qr-code [value]="'Yo world!'" [size]="300"></qr-code>
 ```

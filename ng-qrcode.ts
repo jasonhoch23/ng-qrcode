@@ -2,7 +2,8 @@ import { NgModule, Component, Input, OnInit, ElementRef, OnChanges, SimpleChange
 import * as QRious from 'qrious';
 
 @Component({
-  selector: 'qr-code'
+  selector: 'qr-code',
+  template: ''
 })
 export class QRCodeComponent implements OnInit, OnChanges {
 

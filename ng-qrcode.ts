@@ -1,38 +1,43 @@
-import { NgModule, Component, Input, OnInit } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl, BrowserModule } from '@angular/platform-browser';
+import { NgModule, Component, Input, OnInit, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
+import * as QRious from 'qrious';
 
 @Component({
   selector: 'qr-code',
-  template: `
-    <img [src]="src" [alt]="data" [width]="size + 'px'" [height]="size + 'px'">
-  `
+  template: '<div #container></div>'
 })
-export class QRCodeComponent implements OnInit {
+export class QRCodeComponent implements OnInit, OnChanges {
 
-  @Input() data: string;
+  @Input() value: string;
 
   @Input() size: number;
 
-  src: SafeResourceUrl;
-
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(private elementRef: ElementRef) {}
 
   ngOnInit() {
-    this.src = this.sanitizer.bypassSecurityTrustResourceUrl(
-      'https://api.qrserver.com/v1/create-qr-code/?data='
-      + this.data
-      +'&size='
-      + this.size
-      + 'x'
-      + this.size
-      + '&margin=0'
-    );
+    this.init();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (!('value' in changes) || !('size' in changes)) {
+      return;
+    }
+
+    this.init();
+  }
+
+  private init(): void {
+    const qr = new QRious({
+      value: this.value,
+      size: this.size
+    });
+
+    this.elementRef.nativeElement.innerHTML = '';
+    this.elementRef.nativeElement.appendChild(qr.image);
   }
 
 }
 
 @NgModule({
-  imports: [BrowserModule],
   exports: [QRCodeComponent],
   declarations: [QRCodeComponent],
   entryComponents: [QRCodeComponent]

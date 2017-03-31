@@ -1,12 +1,12 @@
-import { OnInit, NgModule } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-export declare class QRCodeComponent implements OnInit {
-    private sanitizer;
-    data: string;
+import { OnInit, ElementRef, OnChanges, SimpleChanges, NgModule } from '@angular/core';
+export declare class QRCodeComponent implements OnInit, OnChanges {
+    private elementRef;
+    value: string;
     size: number;
-    src: SafeResourceUrl;
-    constructor(sanitizer: DomSanitizer);
+    constructor(elementRef: ElementRef);
     ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    private init();
 }
 @NgModule()
 export declare class QRCodeModule {

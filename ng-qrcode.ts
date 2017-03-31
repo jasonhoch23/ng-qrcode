@@ -2,8 +2,7 @@ import { NgModule, Component, Input, OnInit, ElementRef, OnChanges, SimpleChange
 import * as QRious from 'qrious';
 
 @Component({
-  selector: 'qr-code',
-  template: '<div #container></div>'
+  selector: 'qr-code'
 })
 export class QRCodeComponent implements OnInit, OnChanges {
 
@@ -18,7 +17,7 @@ export class QRCodeComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (!('value' in changes) || !('size' in changes)) {
+    if (!changes.value && !changes.size) {
       return;
     }
 
